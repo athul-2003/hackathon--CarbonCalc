@@ -1,14 +1,11 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import dotenv from 'dotenv';
 
-// Load environment variables from .env file
-dotenv.config();
-
-// Replace this with the API key from .env
+// Replace this with the API key from the Netlify environment variables
 const API_KEY = process.env.GOOGLE_API_KEY;
 
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
 
 // Function to calculate and display the carbon footprint
 window.calculateCarbonFootprint = function (event) {
